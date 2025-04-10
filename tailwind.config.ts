@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,15 +53,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				teal: {
+					light: '#4fd1c5',
+					DEFAULT: '#0ea5e9',
+					dark: '#0284c7'
+				},
+				indigo: {
+					light: '#818cf8',
+					DEFAULT: '#6366f1',
+					dark: '#4f46e5'
 				}
 			},
 			borderRadius: {
@@ -68,27 +69,56 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			fontFamily: {
+				signature: ['Dancing Script', 'cursive'],
+			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' },
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' },
+				},
+				typing: {
+					from: { width: '0' },
+					to: { width: '100%' },
+				},
+				blink: {
+					'0%, 100%': { 'border-color': 'transparent' },
+					'50%': { 'border-color': 'currentColor' },
+				},
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' },
+				},
+				slideIn: {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(0)' },
+				},
+				bounce: {
+					'0%, 100%': { transform: 'translateY(-5px)' },
+					'50%': { transform: 'translateY(0)' },
+				},
+				pulse: {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' },
+				},
+				circleFill: {
+					'0%': { 'stroke-dasharray': '0, 100' },
+					'100%': { 'stroke-dasharray': 'var(--percent), 100' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'typing': 'typing 3.5s steps(40, end), blink .75s step-end infinite',
+				'fade-in': 'fadeIn 0.8s ease-out forwards',
+				'slide-in': 'slideIn 0.8s ease-out forwards',
+				'bounce': 'bounce 3s ease-in-out infinite',
+				'pulse': 'pulse 2s ease-in-out infinite',
+				'circle-fill': 'circleFill 1.5s ease-out forwards'
 			}
 		}
 	},
