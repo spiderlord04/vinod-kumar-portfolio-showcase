@@ -8,7 +8,6 @@ import EducationSection from '@/components/EducationSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import HobbiesSection from '@/components/HobbiesSection';
 import ContactSection from '@/components/ContactSection';
-import ResumeSection from '@/components/ResumeSection';
 import Footer from '@/components/Footer';
 
 // Need to add react-intersection-observer
@@ -30,7 +29,6 @@ const Index = () => {
       <ProjectsSection />
       <HobbiesSection />
       <ContactSection />
-      <ResumeSection />
       <Footer />
     </div>
   );

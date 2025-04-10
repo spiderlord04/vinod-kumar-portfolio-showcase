@@ -1,7 +1,8 @@
 
-import { User } from 'lucide-react';
+import { User, Download } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 const AboutSection = () => {
   const { ref, inView } = useInView({
@@ -49,6 +50,16 @@ const AboutSection = () => {
               Beyond academics, I'm an adaptive learner who enjoys observing how digital solutions shape the real world. 
               My mission is to contribute to tech projects that create impact and make user experiences better.
             </p>
+
+            <div className="pt-4 flex justify-center md:justify-start">
+              <Button 
+                size="lg"
+                className="gradient-bg hover:opacity-90 animate-pulse"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download Resume (PDF)
+              </Button>
+            </div>
           </div>
         </div>
       </div>
