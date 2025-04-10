@@ -10,6 +10,26 @@ const AboutSection = () => {
     threshold: 0.1,
   });
 
+  const handleDownloadResume = () => {
+    // Create an anchor element
+    const link = document.createElement('a');
+    
+    // Set the href to the PDF file path
+    link.href = '/vinodres.pdf';
+    
+    // Set download attribute to suggest filename
+    link.download = 'vinodres.pdf';
+    
+    // Append to the document
+    document.body.appendChild(link);
+    
+    // Trigger click event
+    link.click();
+    
+    // Clean up - remove the element
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="about" className="py-20 bg-accent/30">
       <div className="container mx-auto px-4">
@@ -55,6 +75,7 @@ const AboutSection = () => {
               <Button 
                 size="lg"
                 className="gradient-bg hover:opacity-90 animate-pulse"
+                onClick={handleDownloadResume}
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume (PDF)
